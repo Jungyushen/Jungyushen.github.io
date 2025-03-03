@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexis Jung-Yu Shen | Program Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url('kitten-cursor.png'), auto;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: var(--light-color);
+            font-family: 'Crimson Text', serif;
+            font-size: 18px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(44, 62, 80, 0.95);
+            color: var(--light-text);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 300;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--light-text);
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-color: var(--dark-color);
+            overflow: hidden;
+            margin-top: 60px;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.65;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            width: 100%;
+        }
+        
+        .hero-text {
+            flex: 1;
+            color: var(--light-text);
+            padding: 2rem;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .portrait {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 0;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            border: none;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+            border-radius: 0;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 0;
+        }
+        
+        .btn:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .btn:hover {
+            color: #fff; /* Change text color on hover */
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            color: var(--light-text);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light-text);
+            border: 1px solid var(--light-text);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            border: 1px solid var(--light-text);
+        }
+        
+        /* About Section */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .about {
+            background-color: rgba(52, 152, 219, 0.1); /* Light blue */
+        }
+        
+        .experience {
+            background-color: rgba(231, 76, 60, 0.1); /* Light red */
+        }
+        
+        .education {
+            background-color: rgba(46, 204, 113, 0.1); /* Light green */
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .about-text {
+            flex: 2;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills {
+            flex: 1;
+        }
+        
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 400;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+        }
+        
+        .skills ul li {
+            font-size: 1.05rem;
+            color: var(--dark-color);
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+        
+        .skills ul li:before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .experience-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .experience-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+        
+        .experience-card h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        .experience-card .date {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .experience-card ul {
+            padding-left: 1.5rem;
+            margin-top: 1.2rem;
+        }
+        
+        .experience-card li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+        
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .education-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .education-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+        
+        .education-card h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+            font-weight: normal;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        .education-card .date {
+            color: #777;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: rgba(155, 89, 182, 0.1); /* Light purple */
+            color: var(--text-color);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--accent-color);
+            width: 30px;
+            text-align: center;
+        }
+        
+        .contact-item span {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .contact-item a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-text);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: var(--light-text);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            
+            .hero-text {
+                padding: 2rem;
+            }
+            
+            .hero-image {
+                margin-top: 2rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .portrait {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">AJS</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="content.html">My Thoughts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I am Alexis!</h1>
+                    <h2>People-Centered Program Manager</h2>
+                    <p>With over 6 years of experience driving strategic initiatives across education policy and government sectors, I thrive at the intersection of technology, human-centered design, and community impact. Proud Taiwanese cat parent who unwinds by cheering at baseball games, exploring new destinations, and experimenting with recipes from around the world.</p>
+                    <div class="hero-buttons">
+                        <a href="JungYu Resume.pdf" class="btn btn-primary" target="_blank">My 
+                        Resume</a>
+                        <a href="content.html" class="btn btn-secondary">Read What I Think</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="portrait.jpeg" alt="Alexis Jung-Yu Shen" class="portrait">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm all about helping people and organizations grow—it's what drives me whether I'm implementing public policies or getting different stakeholders to work together. When it comes to project management, I have a knack for taking complicated policy ideas and turning them into real solutions that actually work, making sure everyone on the team understands what we're doing and why.</p>
+                    <p>What really gets me excited is finding practical ways to solve tricky problems. I love creating products and experiences that make a genuine difference in communities. Lately, I've been fascinated by AI ethics and how we can use AI responsibly in education—there's so much potential to transform how people learn if we approach it thoughtfully.</p>
+                    <p>When I'm not working, you'll find me trying out recipes from around the world or catching a baseball game. These simple pleasures connect me to different cultures and communities in ways that feel meaningful to me. I'm always looking for those sweet spots where tech and human-centered design can make life better and more fair for everyone.</p>
+                </div>
+                <div class="skills">
+                    <h3>Core Competencies</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">Leadership</li>
+                        <li style="margin-bottom: 10px;">Community Outreach</li>
+                        <li style="margin-bottom: 10px;">Attention to Detail</li>
+                        <li style="margin-bottom: 10px;">Cross-Functional Collaboration</li>
+                        <li style="margin-bottom: 10px;">Data-Driven Insights</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>WorkLife Program Coordinator Intern</h3>
+                    <h4>University of Washington</h4>
+                    <div class="date">January 2025 - Present</div>
+                    <ul>
+                        <li>Assist in the development and execution of employee engagement and career development programs, ensuring alignment with organizational goals</li>
+                        <li>Partner with internal teams and external vendors to enhance learning and development initiatives</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Executive Assistant to Chief Executive Officer</h3>
+                    <h4>Taipei City Government</h4>
+                    <div class="date">January 2022 - March 2024</div>
+                    <ul>
+                        <li>Orchestrated 25+ bi-weekly meetings with 8 cross-functional teams to implement fund distribution policies</li>
+                        <li>Optimized district office website and Facebook page with user-friendly features and bilingual content, resulting in a 40% increase in social media followers</li>
+                        <li>Enhanced public accessibility to up-to-date information, demonstrating a commitment to transparency and effective communication</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Officer</h3>
+                    <h4>Taipei City Government</h4>
+                    <div class="date">March 2018 - December 2021</div>
+                    <ul>
+                        <li>Led a cross-functional COVID-19 task force, conducting daily meetings for 3 months to monitor over 50K cases</li>
+                        <li>Initiated 14+ large-scale community events with budgets of $10K to promote inter-district collaboration and physical education</li>
+                        <li>Reached 2K+ students and garnered 30+ pieces of media coverage through community initiatives</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Research Internship</h3>
+                    <h4>Johns Hopkins Bloomberg School of Public Health</h4>
+                    <div class="date">March 2023 - August 2023</div>
+                    <ul>
+                        <li>Analyzed 200+ qualitative research data, extracting key insights and collaborating with a multidisciplinary public health team</li>
+                        <li>Informed evidence-based decision-making with data visualization tools</li>
+                        <li>Co-authored a published research paper with the team: <a href="https://rdcu.be/ebSwH" target="_blank" style="color: var(--accent-color);">View Publication</a></li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Trainee Teacher</h3>
+                    <h4>Teach For Taiwan 為台灣而教</h4>
+                    <div class="date">July 2016 - August 2016</div>
+                    <ul>
+                        <li>Observed experienced teachers to learn effective methods, gaining insights into diverse instructional strategies</li>
+                        <li>Delivered engaging lessons to 8 second-grade students, facilitating active participation and comprehension</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>University of Washington</h3>
+                    <h4>Master of Science - MS, Information Systems</h4>
+                    <div class="date">March 2024 - June 2025</div>
+                </div>
+                <div class="education-card">
+                    <h3>University of Washington</h3>
+                    <h4>Master of Education - MEd, Education Policy</h4>
+                    <div class="date">September 2022 - August 2023</div>
+                </div>
+                <div class="education-card">
+                    <h3>National Taiwan University</h3>
+                    <h4>Bachelor's degree, Political Science and Government</h4>
+                    <div class="date">September 2012 - June 2016</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-info">
+                <div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:zongyu326@gmail.com">zongyu326@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Seattle, Washington, United States</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/alexis-jungyushen" target="_blank">linkedin.com/in/alexis-jungyushen</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>UW-MSIS 2025 | UW-Edu Policy 2023</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-language"></i>
+                        <span>Bilingual: English & Chinese</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+      <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Alexis Jung-Yu Shen. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <div id="loader" style="position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.9);
+    display: flex; justify-content: center; align-items: center; z-index: 9999;">
+    <div class="spinner" style="border: 10px solid #f3f3f3; border-top: 10px solid var(--primary-color);
+    border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite;"></div>
+    </div>
+    
+    <style>
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+    </style>
+    
+    <script>
+    window.onload = function() {
+    document.getElementById("loader").style.display = "none";
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+/* Page Header */
+        .page-header {
+            margin-top: 60px;
+            background-color: var(--gray-lighter);
+            padding: 6rem 0;
+            text-align: center;
+            background-image: url('banner.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: var(--white);
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexis Shen - Blog Articles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles and variables */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --light-color: #f8f9fa;
+            --gray: #3C3C3C;
+            --gray-light: #7E7E7E;
+            --gray-lighter: #F3F3F3;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url('kitten-cursor.png'), auto;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--gray);
+            line-height: 1.8;
+            font-family: 'Crimson Text', serif;
+            font-size: 18px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 60px;
+            background-color: var(--gray-lighter);
+            padding: 6rem 0;
+            text-align: center;
+            background-image: url('banner.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: var(--white);
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            position: relative;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Featured Articles */
+        .featured-articles {
+            background-color: var(--white);
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .featured-article {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-article:hover {
+            transform: translateY(-10px);
+        }
+
+        .article-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            color: var(--gray);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 500;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* More Articles */
+        .more-articles {
+            background-color: var(--gray-lighter);
+        }
+
+        .article-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-item-content {
+            width: 100%;
+        }
+
+        .article-item-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+
+        .article-item-meta {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .article-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Subscribe Section */
+        .subscribe {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 10%;
+        }
+
+        .subscribe-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .subscribe-text {
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .subscribe-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .subscribe-input {
+            flex-grow: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .subscribe-button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 4px 4px 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .subscribe-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Alexis Shen</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#education">Education</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="header-content">
+            <h1 class="page-title">My Thoughts & Insights</h1>
+            <p class="page-subtitle">Sharing my experiences and knowledge about education, information systems, and human-AI collaboration</p>
+        </div>
+    </header>
+    
+    <!-- Featured Articles Section -->
+    <section class="section featured-articles">
+        <h2 class="section-title">Featured Articles</h2>
+        <div class="article-grid">
+            <article class="featured-article">
+                <div class="article-content">
+                    <h3 class="article-title">2023美國Information Systems碩士申請經驗分享</h3>
+                    <div class="article-meta">
+                        <span>March 15, 2023</span>
+                        <span>10 min read</span>
+                    </div>
+                    <p class="article-excerpt">
+                        A comprehensive guide to applying for Information Systems master's programs in the United States, based on my personal experience in 2023. This article covers application strategies, program selection, and tips for success.
+                    </p>
+                    <a href="https://lulustrawberry.medium.com/2023%E7%BE%8E%E5%9C%8B%E6%96%87%E5%AD%B8%E5%B8%AB%E7%A2%A9%E5%A3%AB%E7%94%B3%E8%AB%8B%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-b250241bc210" target="_blank" class="read-more">Read Article</a>
+                </div>
+            </article>
+            
+            <article class="featured-article">
+                <div class="article-content">
+                    <h3 class="article-title">2020美國教育政策碩士申請經驗分享</h3>
+                    <div class="article-meta">
+                        <span>September 10, 2020</span>
+                        <span>12 min read</span>
+                    </div>
+                    <p class="article-excerpt">
+                        Detailed insights from my journey applying to Education Policy master's programs in the United States. I discuss program differences, application materials, interview processes, and decision factors for selecting the right program.
+                    </p>
+                    <a href="https://lulustrawberry.medium.com/2020%E7%BE%8E%E5%9C%8B%E6%95%99%E8%82%B2%E6%94%BF%E7%AD%96%E7%A2%A9%E5%A3%AB%E7%94%B3%E8%AB%8B%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-908badf19849" target="_blank" class="read-more">Read Article</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <!-- More Articles Section -->
+    <section class="section more-articles">
+        <h2 class="section-title">More From My Blog</h2>
+        <div class="article-list" style="text-align: center; padding: 2rem 0;">
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.4rem;">Explore my complete collection of articles and insights</h3>
+            <p style="margin-bottom: 2rem; color: var(--gray-light);">Visit my Medium page for more educational content, technology insights, and personal reflections</p>
+            <a href="https://lulustrawberry.medium.com/" target="_blank" class="read-more" style="font-size: 1.1rem; padding: 0.8rem 2rem;">Visit My Medium Page</a>
+        </div>
+    </section>
+    
+    <!-- Subscribe Section -->
+    <section class="subscribe">
+        <h2 class="subscribe-title">Stay Updated</h2>
+        <p class="subscribe-text">Subscribe to my newsletter to receive notifications about new articles and insights on education, technology, and AI collaboration.</p>
+        <form class="subscribe-form">
+            <input type="email" placeholder="Your email address" class="subscribe-input" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Jung-Yu (Alexis) Shen. All rights reserved.</p>
+    </footer>
+</body>
+</html>
